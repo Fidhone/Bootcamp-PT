@@ -1,17 +1,17 @@
 const getEpisodes = async () => {
     const data = await fetch("https://api.sampleapis.com/simpsons/episodes");
-    const json = await data.json();
-    const episodes = json.data.episodes;
+    const episodes = await data.json();
+
 
     mapEpisodes(episodes);
 };
 
 const mapEpisodes = (episodesList) => {
     const mappedEpisodes = episodesList.map((episode) => ({
-        season: serie.season,
-        episode: serie.episode,
-        name: serie.name,
-        img: serie.thumbnailUrl,
+        season: episode.season,
+        episode: episode.episode,
+        name: episode.name,
+        img: episode.thumbnailUrl,
     }));
     printEpisodes(mappedEpisodes);
 };
@@ -22,8 +22,8 @@ const printEpisodes = (episodes) => {
         const figure = document.createElement("figure");
         figure.innerHTML= `
             <div>
-            <h2>${serie.season} - ${serie.episode} - ${serie.name}</h2>
-            <img src=&{serie.img} referrerpolicy="no-referrer"/>
+            <h2>${episode.season} - ${episode.episode} - ${episode.name}</h2>
+            <img src=${episode.img}/>
             </div>
         `;
         container.appendChild(figure);
@@ -31,3 +31,4 @@ const printEpisodes = (episodes) => {
 };
 
 getEpisodes();
+
