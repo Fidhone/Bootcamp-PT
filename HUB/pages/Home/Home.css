@@ -1,0 +1,75 @@
+#Pokedex,
+#Wacka,
+#Raya,
+#Memory,
+#Hangman,
+#Quiz{
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    display: flex;
+    justify-content: center;
+    
+}
+.Home{
+    display: grid;
+    margin: 3rem;
+    padding: 1rem;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(3, 350px);
+}
+
+#Pokedex{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSr8qkQlnhrJAisMj6WNlbbuDLYhawYjxISqUuMu7UlDuUMQEdgCUBYW8LeLiFOsHjCznI&usqp=CAU);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-color: rgb(255, 255, 255);
+}
+#Wacka{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQmlBl5E9VZ3ZBiEe9kfvK_8SDwiB40CPowdHJyCfyT8MrV1YnanRVAjlUGALa1OXPlX0&usqp=CAU);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: rgb(255, 255, 255);
+}
+#Raya{
+    background-image: url(https://play-lh.googleusercontent.com/kDW35uTWTWM3H2ysfhMrQbUGEKCLo77AA9rtrZTq93-1vUcS6Wi3EI6kC7kEZtK7S6WH=w240-h480-rw);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: rgb(255, 255, 255);
+}
+#Memory{
+    background-image: url(https://i.pinimg.com/736x/66/60/2d/66602de80f5407b2c27bed4a195f5d67.jpg);
+    background-size:110%;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: rgb(255, 255, 255);
+}
+#Hangman{
+    background-image: url(https://img.itch.zone/aW1hZ2UvMTQ0ODkwLzY2NDI3OC5wbmc=/315x250%23c/3uIyd4.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: rgb(255, 255, 255);
+}
+#Quiz{
+    background-image: url(http://pixelartmaker-data-78746291193.nyc3.digitaloceanspaces.com/image/f0e160e61bd3661.png);
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-color: rgb(255, 255, 255);
+}

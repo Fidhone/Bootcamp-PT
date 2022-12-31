@@ -1,26 +1,28 @@
 import "../Login/Login.css";
+import { initContent } from "../../main";
 
-const container = document.querySelector("#local");
-const loginInput = document.querySelector("#username");
-const loginBtn = document.querySelector("#login");
-const logout = document.querySelector("#logout");
-
-export const CreateLogin = () => {
-  const setUser = (username) => {
-    localStorage.setItem("user", username);
-    container.innerHTML = `<h2>Welcome ${username}!</h2>`;
-  };
-
-  loginBtn.addEventListener("click", () => setUser(loginInput.value));
-
-  logout.addEventListener("click", () => {
-    localStorage.clear();
-    container.innerHTML = `<h2>No hay usuario</h2>`;
-  });
-
-  if (localStorage.getItem("user")) {
-    container.innerHTML = `<h2>Welcome ${localStorage.user}!</h2>`;
-  } else {
-    container.innerHTML = `<h2>No hay usuario</h2>`;
+const setUser = () => {
+  if (document.querySelector("#username")) {
+    window.localStorage.setItem(
+      "user",
+      document.querySelector("#username").value
+    );
+    initContent("Home");
   }
+};
+
+const template = () => `
+    <h1>Welcome To Hub Games</h1>
+    <input type="text" id="username" placeholder="insert name" />
+    <button id="loginBtn">Login</button>
+`;
+
+const addListeners = () => {
+  if (document.querySelector("#loginBtn"))
+    document.querySelector("#loginBtn").addEventListener("click", setUser);
+};
+
+export const printTemplate = () => {
+  document.querySelector("#app").innerHTML = template();
+  addListeners();
 };
