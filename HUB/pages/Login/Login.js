@@ -13,7 +13,7 @@ const setUser = () => {
 
 const template = () => `
     <h1>Welcome To Hub Games</h1>
-    <input type="text" id="username" placeholder="insert name" />
+    <input type="text" id="username" placeholder="Insert name" autocomplete="off"/>
     <button id="loginBtn">Login</button>
 `;
 

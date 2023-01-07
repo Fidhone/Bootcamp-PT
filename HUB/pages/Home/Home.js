@@ -18,9 +18,6 @@ const addListeners = () => {
   document
     .querySelector("#Pokedex")
     .addEventListener("click", () => initContent("Pokedex"));
-  document
-    .querySelector("#Wacka")
-    .addEventListener("click", () => initContent("Wacka"));
 };
 
 export const printTemplate = () => {

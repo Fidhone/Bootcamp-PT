@@ -1,7 +1,70 @@
-.pokeContainer > img {
-    background: rgb(0, 0, 0);
+#searching{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-bottom: 5rem;
+}
+
+#searching > #pokemon{
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+}
+
+#searching > #searchBtn{
+    font-family: 'Press Start 2P';
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000;
+    cursor: pointer;
+    border: 3px solid;
+    padding: 0.25em 0.5em;
+    box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px, 5px 5px 0px 0px;
+}
+
+.pokeContainer>div {
+    background-position: center;
+    background-size: 100%;
     border-radius: 50%;
-    width: 10%;
-    height: 10%;
-    margin: 1rem;    
+    width: 250px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.pokeContainer {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+    grid-auto-rows: 400px;
+    gap: 2rem;
+}
+
+.pokeContainer>div>img {
+    width: 130px;
+    height: 130px;
+    padding-top: 3rem;
+
+}
+
+.pokeContainer>div>h5,
+a {
+    color: rgb(0, 0, 0);
+    display: flex;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0.7rem;
 }
