@@ -1,0 +1,118 @@
+.Loading {
+  background-color: #f2f2f2;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.Noticiashome {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  background-image: url(https://cdn3.vectorstock.com/i/1000x1000/30/42/white-stage-and-breaking-news-on-lcds-background-i-vector-33353042.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 50.4vw;
+}
+
+.Noticiashome > .noticia-1 {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLAW7mXg5spNkJhvLFabDDaHhgBp-eP93j80e12G_PFqE5ca7WivF2PYATrMIk9XPOqHU&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 6rem 5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Noticiashome > .noticia-1:hover {
+  box-shadow: #ffffff 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.Noticiashome > .noticia-2 {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgACp2uAA1JBY6GLGVYpA5gvQXZ_nRgZZGW3ZtbrYwC68llDjEgMUIWP65cN-C7DzEiTo&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 6rem 5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Noticiashome > .noticia-2:hover {
+  box-shadow: #ffffff 0 0 0 3px, transparent 0 0 0 0;
+}
+
+.Noticiashome > .noticia-3 {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhKiGCRIPpZSJHwfwa14y4YqYN4TRUUdnPErdjPK2Aggw4oyQ-0ZSXE28-6vgxHFStMDA&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+  align-items: center;
+  border-radius: 12px;
+  box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 1;
+  margin: 0;
+  outline: none;
+  padding: 6rem 5rem;
+  text-align: center;
+  text-decoration: none;
+  transition: box-shadow 0.2s, -webkit-box-shadow 0.2s;
+  white-space: nowrap;
+  border: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.Noticiashome > .noticia-3:hover {
+  box-shadow: #ffffff 0 0 0 3px, transparent 0 0 0 0;
+}

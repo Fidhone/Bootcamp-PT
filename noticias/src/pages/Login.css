@@ -1,0 +1,50 @@
+.containerLogin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://static.videezy.com/system/resources/thumbnails/000/054/407/original/Breaking-news-background-loop.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 50.45vw;
+}
+
+.containerLogin h2 {
+  margin: 20rem 20rem 5rem 20rem;
+  color: #ffffff;
+  font-family: 'ProximaNova', sans-serif;
+  line-height: 18px;
+}
+
+.containerLogin input {
+  background: silver;
+  border: 1px solid #393939;
+  border-radius: 5px 5px 5px 5px;
+  color: #393939;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.containerLogin .loginButton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+  border-radius: 6px;
+  border: none;
+  margin-top: 1rem;
+  background: #6e6d70;
+  box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1),
+    inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+  color: #dfdedf;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.containerLogin .loginButton:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2),
+    0px 0.5px 1px rgba(0, 0, 0, 0.1), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}

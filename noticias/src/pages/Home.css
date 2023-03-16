@@ -1,0 +1,32 @@
+.Home nav {
+  width: 100%;
+  height: 10vh;
+  background-image: linear-gradient(rgba(5, 10, 5, 0.8), rgba(90, 40, 90, 0.8));
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.backgroundHome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(https://cdn3.vectorstock.com/i/1000x1000/30/42/white-stage-and-breaking-news-on-lcds-background-i-vector-33353042.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 45.4vw;
+}
+
+.backgroundHome footer {
+  width: 95%;
+  height: 15vw;
+  margin: 45rem 30rem 0rem 30rem;
+  padding: 35px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-family: 'ProximaNova', sans-serif;
+  font-size: 1rem;
+  color: #fff;
+}
