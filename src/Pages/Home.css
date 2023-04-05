@@ -1,0 +1,16 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.event {
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+.imgEvent {
+  max-width: 100%;
+  height: auto;
+  max-height: 200px;
+}
