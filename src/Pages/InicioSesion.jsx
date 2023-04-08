@@ -2,9 +2,12 @@ import "./InicioSesion.css";
 
 import React from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
 const InicioSesion = () => {
   const { register, handleSubmit } = useForm();
+
+  const navigate = useNavigate();
 
   const onSubmit = (data) => {
     // Aquí puedes enviar las credenciales del usuario a tu servidor
@@ -14,6 +17,8 @@ const InicioSesion = () => {
     // Guarda los datos de usuario en localStorage
     localStorage.setItem("email", data.email);
     localStorage.setItem("password", data.password);
+    navigate("/compra_entradas");
+    window.location.reload(); // recarga la página después de cerrar sesión
   };
 
   return (

@@ -7,7 +7,6 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import App from "./App";
 import Protected from "./Components/Protected";
 import BusquedaEventos from "./Pages/BusquedaEventos";
-import ComparadorPrecios from "./Pages/ComparadorPrecios";
 import CompraEntradas from "./Pages/CompraEntradas";
 import GestionCuentas from "./Pages/GestionCuentas";
 import Home from "./Pages/Home";
@@ -17,13 +16,11 @@ import Page404 from "./Pages/Page404";
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <BrowserRouter basename="/">
-      {/* <UserContextProvider> */}
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="/inicio_sesion" element={<InicioSesion />} />
           <Route path="/busqueda_eventos" element={<BusquedaEventos />} />
-          <Route path="/comparador_precios" element={<ComparadorPrecios />} />
           <Route path="/busqueda_eventos:id" element={<BusquedaEventos />} />
           <Route
             path="/compra_entradas"
@@ -44,7 +41,6 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/*" element={<Page404 />} />
         </Route>
       </Routes>
-      {/* </UserContextProvider> */}
     </BrowserRouter>
   </React.StrictMode>,
 );

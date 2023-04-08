@@ -21,15 +21,21 @@ const Home = () => {
 
   return (
     <div className="container">
-      {ticketMaster.map((event) => (
-        <div key={event.id} className="event">
-          <h2>{event.name}</h2>
-          <p>{event.dates.start.localDate}</p>
-          <p>{event.dates.start.localTime}</p>
-          <p>{event._embedded.venues[0].name}</p>
-          <img className="imgEvent" src={event.images[3].url} alt={event.name} />
-        </div>
-      ))}
+      <h1>Entradas.FTM</h1>
+      <div className="events-container">
+        {ticketMaster.map((event) => (
+          <div key={event.id} className="event">
+            <img className="imgEvent" src={event.images[3].url} alt={event.name} />
+            <div className="event-details">
+              <h2>{event.name}</h2>
+              <p>
+                {event.dates.start.localDate} a las {event.dates.start.localTime}
+              </p>
+              <p>Lugar: {event._embedded.venues[0].name}</p>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

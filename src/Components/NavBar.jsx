@@ -3,6 +3,8 @@ import "./NavBar.css";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import Logout from "./Logout";
+
 const NavBar = () => {
   return (
     <nav>
@@ -18,11 +20,6 @@ const NavBar = () => {
           </NavLink>
         </li>
         <li>
-          <NavLink to="/comparador_precios" className="active">
-            Comparar precios
-          </NavLink>
-        </li>
-        <li>
           <NavLink to="/compra_entradas" className="active">
             Comprar entradas
           </NavLink>
@@ -33,6 +30,7 @@ const NavBar = () => {
           </NavLink>
         </li>
       </ul>
+      <Logout />
     </nav>
   );
 };
