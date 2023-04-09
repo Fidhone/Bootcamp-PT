@@ -1,0 +1,21 @@
+footer {
+  background-color: #f2f2f2;
+  color: #666;
+  font-size: 1.2em;
+  padding: 1em;
+  text-align: center;
+  /* position: static; */
+  left: 0;
+  bottom: 0;
+}
+
+footer a {
+  color: #666;
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0 0.5em;
+}
+
+footer a:hover {
+  color: #333;
+}

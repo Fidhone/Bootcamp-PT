@@ -6,7 +6,7 @@
 }
 
 h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   text-align: center;
   font-size: 4rem;
   margin-bottom: 40px;
@@ -53,4 +53,56 @@ p {
 
 p:last-child {
   margin-bottom: 0;
+}
+
+/* //paginacion */
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 24px;
+}
+
+.events-per-page {
+  margin-right: 50px;
+}
+
+.page-numbers {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.page-numbers li {
+  margin-right: 30px;
+}
+
+.page-numbers li:last-child {
+  margin-right: 0;
+}
+
+.active button {
+  background-color: #333;
+  color: #fff;
+  border-radius: 10px;
+}
+
+.btnPage {
+  border: none;
+  background-color: transparent;
+  color: #333;
+  font-weight: bold;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.btnPage:hover {
+  background-color: #333;
+  color: #fff;
 }
