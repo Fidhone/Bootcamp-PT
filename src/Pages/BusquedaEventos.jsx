@@ -1,15 +1,22 @@
+import "./BusquedaEventos.css";
+
 import React, { useEffect, useState } from "react";
 
-import { getTicketmasterEvent } from "../services/ticketMaster";
-
+import { getTicketmaster } from "../services/ticketMaster";
 function BusquedaEventos() {
   const [filtro, setFiltro] = useState("todos");
   const [eventos, setEventos] = useState([]);
   const [eventosFiltrados, setEventosFiltrados] = useState([]);
+  const [favoritos, setFavoritos] = useState(() => {
+    const currentUser = localStorage.getItem("currentUser");
+    const dataCurrent = localStorage.getItem(currentUser);
+    const data = JSON.parse(dataCurrent);
+    return data.fav || [];
+  });
 
   useEffect(() => {
     async function fetchData() {
-      const response = await getTicketmasterEvent();
+      const response = await getTicketmaster();
       setEventos(response._embedded.events);
       setEventosFiltrados(response._embedded.events);
       console.log(response);
@@ -33,20 +40,65 @@ function BusquedaEventos() {
   const handleFiltroChange = (e) => {
     setFiltro(e.target.value);
   };
+  const handleLike = (e) => {
+    console.log(e.target.id);
+    const eventId = e.target.id;
+    const emailCurrent = localStorage.getItem("currentUser");
+    const dataCurrent = localStorage.getItem(emailCurrent);
+    const dataJSON = JSON.parse(dataCurrent);
+    const favArray = dataJSON.fav;
+    const eventIndex = favArray.indexOf(eventId);
+
+    if (eventIndex >= 0) {
+      // Si el evento ya existe en el array, se elimina
+      favArray.splice(eventIndex, 1);
+    } else {
+      // Si el evento no existe en el array, se agrega
+      favArray.push(eventId);
+    }
+
+    const person = {
+      email: dataJSON.email,
+      token: true,
+      fav: favArray,
+    };
+    localStorage.removeItem(emailCurrent);
+    localStorage.setItem(emailCurrent, JSON.stringify(person));
+    const isFavorito = favoritos[eventId] || false;
+    setFavoritos({ ...favoritos, [eventId]: !isFavorito });
+  };
 
   return (
-    <div>
-      <label htmlFor="filtro">Filtrar por:</label>
-      <select id="filtro" value={filtro} onChange={handleFiltroChange}>
+    <div className="container">
+      <label htmlFor="filtro" className="label">
+        Filtrar por:
+      </label>
+      <select id="filtro" value={filtro} onChange={handleFiltroChange} className="select">
         <option value="todos">Todos los eventos</option>
         <option value="Music">Conciertos</option>
         <option value="Sports">Deportes</option>
-        <option value="Film">Teatro</option>
+        <option value="Film">Festivales</option>
       </select>
-      <ul>
-        {eventosFiltrados.map((evento) => (
-          <li key={evento.id}>{evento.name}</li>
-        ))}
+      <ul className="ul">
+        {console.log(favoritos)}
+        {localStorage.getItem("currentUser")
+          ? eventosFiltrados.map((evento) => (
+              <div key={evento.id}>
+                <li key={evento.id} className="li">
+                  {evento.name}
+                  {console.log(favoritos[0])}
+                  {console.log(favoritos)}
+                  <button
+                    className={favoritos[evento.id] ? "button-favorito" : "button"}
+                    onClick={(e) => handleLike(e)}
+                    id={evento.id}
+                  >
+                    ♥
+                  </button>
+                </li>
+              </div>
+            ))
+          : eventosFiltrados.map((evento) => <li key={evento.id}>{evento.name}</li>)}
       </ul>
     </div>
   );

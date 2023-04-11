@@ -5,7 +5,7 @@ import { NavLink } from "react-router-dom";
 
 import Logout from "./Logout";
 
-const NavBar = () => {
+const NavBar = ({ user, setUser }) => {
   return (
     <nav>
       <ul>
@@ -30,7 +30,7 @@ const NavBar = () => {
           </NavLink>
         </li>
       </ul>
-      <Logout />
+      <Logout user={user} setUser={setUser} />
     </nav>
   );
 };

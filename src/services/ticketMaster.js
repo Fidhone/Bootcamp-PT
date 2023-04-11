@@ -1,6 +1,6 @@
 import useAxios from "../Hooks/useAxios";
 
-export const getTicketmasterEvent = async () => {
+export const getTicketmaster = async () => {
   const optionsRequest = {
     method: "GET",
     url: "https://app.ticketmaster.com/discovery/v2/events.json?countryCode=ES&apikey=GnNkLNvMtjeluuCLh7C2TwvEsotBZTcx&size=200",

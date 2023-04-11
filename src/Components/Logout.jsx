@@ -1,11 +1,23 @@
+import "./Logout.css";
+
 import { useEffect, useState } from "react";
 
-const Logout = () => {
+const Logout = ({ setUser }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const emailCurrent = localStorage.getItem("currentUser");
+  const dataCurrent = localStorage.getItem(emailCurrent);
 
   const handleLogout = () => {
+    const dataJSON = JSON.parse(dataCurrent);
+    const person = {
+      email: dataJSON.email,
+      token: false,
+      fav: dataJSON.fav,
+    };
+    localStorage.removeItem(emailCurrent);
+    localStorage.setItem(emailCurrent, JSON.stringify(person));
     localStorage.removeItem("email");
-    localStorage.removeItem("password");
+    localStorage.removeItem("currentUser");
     setIsLoggedIn(false);
     window.location.reload(); // recarga la página después de cerrar sesión
   };
@@ -15,9 +27,19 @@ const Logout = () => {
     if (email) {
       setIsLoggedIn(true);
     }
-  }, []);
+    setUser(localStorage.getItem("currentUser"));
+  }, [localStorage.getItem("currentUser")]);
 
-  return <>{isLoggedIn && <button onClick={handleLogout}>Cerrar sesión</button>}</>;
+  return (
+    <>
+      {console.log(dataCurrent)}
+      {isLoggedIn && (
+        <button className="btnLogout" onClick={handleLogout}>
+          Cerrar sesión
+        </button>
+      )}
+    </>
+  );
 };
 
 export default Logout;
