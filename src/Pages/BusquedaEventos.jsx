@@ -3,6 +3,7 @@ import "./BusquedaEventos.css";
 import React, { useEffect, useState } from "react";
 
 import { getTicketmaster } from "../services/ticketMaster";
+
 function BusquedaEventos() {
   const [filtro, setFiltro] = useState("todos");
   const [eventos, setEventos] = useState([]);
@@ -11,15 +12,13 @@ function BusquedaEventos() {
     const currentUser = localStorage.getItem("currentUser");
     const dataCurrent = localStorage.getItem(currentUser);
     const data = JSON.parse(dataCurrent);
-    return data.fav || [];
+    return data.fav;
   });
-
   useEffect(() => {
     async function fetchData() {
       const response = await getTicketmaster();
       setEventos(response._embedded.events);
       setEventosFiltrados(response._embedded.events);
-      console.log(response);
     }
     fetchData();
   }, []);
@@ -31,17 +30,14 @@ function BusquedaEventos() {
         : eventos.classifications[0].segment.name.trim().toLowerCase() ===
           filtro.trim().toLowerCase(),
     );
-
     setEventosFiltrados(filtrados);
-    console.log(eventos);
-    console.log(filtro);
   }, [eventos, filtro]);
 
   const handleFiltroChange = (e) => {
     setFiltro(e.target.value);
   };
+
   const handleLike = (e) => {
-    console.log(e.target.id);
     const eventId = e.target.id;
     const emailCurrent = localStorage.getItem("currentUser");
     const dataCurrent = localStorage.getItem(emailCurrent);
@@ -64,8 +60,10 @@ function BusquedaEventos() {
     };
     localStorage.removeItem(emailCurrent);
     localStorage.setItem(emailCurrent, JSON.stringify(person));
-    const isFavorito = favoritos[eventId] || false;
-    setFavoritos({ ...favoritos, [eventId]: !isFavorito });
+
+    console.log("fav array", favArray);
+    setFavoritos(favArray);
+    console.log(favoritos);
   };
 
   return (
@@ -80,16 +78,15 @@ function BusquedaEventos() {
         <option value="Film">Festivales</option>
       </select>
       <ul className="ul">
-        {console.log(favoritos)}
         {localStorage.getItem("currentUser")
           ? eventosFiltrados.map((evento) => (
               <div key={evento.id}>
                 <li key={evento.id} className="li">
                   {evento.name}
-                  {console.log(favoritos[0])}
-                  {console.log(favoritos)}
                   <button
-                    className={favoritos[evento.id] ? "button-favorito" : "button"}
+                    className={
+                      favoritos.includes(evento.id) ? "button-favorito" : "button"
+                    }
                     onClick={(e) => handleLike(e)}
                     id={evento.id}
                   >

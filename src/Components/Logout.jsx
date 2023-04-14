@@ -2,7 +2,7 @@ import "./Logout.css";
 
 import { useEffect, useState } from "react";
 
-const Logout = ({ setUser }) => {
+const Logout = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const emailCurrent = localStorage.getItem("currentUser");
   const dataCurrent = localStorage.getItem(emailCurrent);
@@ -27,8 +27,7 @@ const Logout = ({ setUser }) => {
     if (email) {
       setIsLoggedIn(true);
     }
-    setUser(localStorage.getItem("currentUser"));
-  }, [localStorage.getItem("currentUser")]);
+  }, []);
 
   return (
     <>

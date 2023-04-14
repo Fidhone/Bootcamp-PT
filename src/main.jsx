@@ -20,8 +20,14 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="/inicio_sesion" element={<InicioSesion />} />
-          <Route path="/busqueda_eventos" element={<BusquedaEventos />} />
-          <Route path="/busqueda_eventos:id" element={<BusquedaEventos />} />
+          <Route
+            path="/busqueda_eventos"
+            element={
+              <Protected>
+                <BusquedaEventos />
+              </Protected>
+            }
+          />
           <Route
             path="/compra_entradas"
             element={

@@ -1,0 +1,52 @@
+/* Estilos para el componente CompraEntradas */
+.compra-entradas {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 590px 100px 590px;
+  background-color: #cac8cc;
+}
+
+.input-busqueda {
+  margin-bottom: 16px;
+  padding: 8px;
+  width: 300px;
+  font-size: 16px;
+}
+
+.event {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  position: relative;
+  background-color: #ddd;
+}
+
+.img-event {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 16px;
+  margin-left: 16px;
+}
+
+.event-details {
+  flex: 1;
+}
+
+.comprar-entradas {
+  font-size: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+p {
+  font-size: 20px;
+  margin-bottom: 2px;
+}

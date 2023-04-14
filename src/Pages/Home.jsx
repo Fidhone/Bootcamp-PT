@@ -44,7 +44,7 @@ const Home = () => {
       <h1>Entradas.FTM</h1>
       <div className="events-container">
         {currentEvents.map((event) => (
-          <div key={event.id} className="event">
+          <div key={event.id} className="eventHome">
             <img className="imgEvent" src={event.images[3].url} alt={event.name} />
             <div className="event-details">
               <h2>{event.name}</h2>
