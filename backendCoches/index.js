@@ -41,8 +41,10 @@ app.use(express.urlencoded({ extended: false }));
 //! ------ LAS ROUTAS -------------------------------------------
 
 const UserRoutes = require('./src/api/routes/user.routes');
+const CarRoutes = require('./src/api/routes/car.routes');
 
 app.use('/api/v1/users', UserRoutes);
+app.use('/api/v1/cars', CarRoutes);
 
 app.use('*', (req, res, next) => {
   const error = new Error('Route not found');

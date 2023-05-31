@@ -11,7 +11,7 @@ const {
   deleteUser,
 } = require('../controllers/user.controller');
 
-const { isAuth } = require('../../middlewares/auth.middleware');
+const { isAuth, isAuthAdmin } = require('../../middlewares/auth.middleware');
 
 const UserRoutes = express.Router();
 
@@ -21,7 +21,7 @@ UserRoutes.post('/resend', resendCode);
 UserRoutes.post('/login', login);
 UserRoutes.get('/forgotpassword', forgotPassword);
 UserRoutes.patch('/changepassword', [isAuth], modifyPassword);
-UserRoutes.patch('/update/update', [isAuth], update);
+UserRoutes.patch('/update/update', [isAuthAdmin], update);
 UserRoutes.delete('/', [isAuth], deleteUser);
 
 //! -------REDIRECT --------------------
