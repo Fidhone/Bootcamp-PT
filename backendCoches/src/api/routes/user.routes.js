@@ -9,6 +9,8 @@ const {
   modifyPassword,
   update,
   deleteUser,
+  getAllUsers,
+  getById,
 } = require('../controllers/user.controller');
 
 const { isAuth, isAuthAdmin } = require('../../middlewares/auth.middleware');
@@ -20,6 +22,8 @@ UserRoutes.post('/check', checkNewUser);
 UserRoutes.post('/resend', resendCode);
 UserRoutes.post('/login', login);
 UserRoutes.get('/forgotpassword', forgotPassword);
+UserRoutes.get('/getAllUsers', [isAuthAdmin], getAllUsers);
+UserRoutes.get('/getById/:_id', [isAuthAdmin], getById);
 UserRoutes.patch('/changepassword', [isAuth], modifyPassword);
 UserRoutes.patch('/update/update', [isAuthAdmin], update);
 UserRoutes.delete('/', [isAuth], deleteUser);

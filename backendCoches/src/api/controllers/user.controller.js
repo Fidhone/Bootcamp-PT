@@ -406,6 +406,42 @@ const deleteUser = async (req, res, next) => {
   }
 };
 
+//! ------------------------------------------------------------------------
+//? -------------------------VER TODOS LOS USUARIOS------------------------
+//! ------------------------------------------------------------------------
+
+const getAllUsers = async (req, res, next) => {
+  try {
+    const getAllUser = await User.find();
+    if (getAllUser) {
+      return res.status(200).json(getAllUser);
+    } else {
+      return res.status(404).json('Error to getAll CONTROLLER');
+    }
+  } catch (error) {
+    return next(error);
+  }
+};
+
+//! ------------------------------------------------------------------------
+//? -------------------------VER VEHICULOS POR ID------------------------
+//! ------------------------------------------------------------------------
+
+const getById = async (req, res, next) => {
+  try {
+    const { _id } = req.params;
+
+    const userById = await User.findById(_id);
+    if (userById) {
+      return res.status(200).json(userById);
+    } else {
+      return res.status(404).json('Error controller GetById User');
+    }
+  } catch (error) {
+    return next(error);
+  }
+};
+
 module.exports = {
   register,
   checkNewUser,
@@ -416,4 +452,6 @@ module.exports = {
   modifyPassword,
   update,
   deleteUser,
+  getAllUsers,
+  getById,
 };
