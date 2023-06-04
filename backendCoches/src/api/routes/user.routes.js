@@ -11,6 +11,7 @@ const {
   deleteUser,
   getAllUsers,
   getById,
+  postFavorite,
 } = require('../controllers/user.controller');
 
 const { isAuth, isAuthAdmin } = require('../../middlewares/auth.middleware');
@@ -22,6 +23,7 @@ UserRoutes.post('/check', checkNewUser);
 UserRoutes.post('/resend', resendCode);
 UserRoutes.post('/login', login);
 UserRoutes.get('/forgotpassword', forgotPassword);
+UserRoutes.post('/postFavorite/:_id', postFavorite);
 UserRoutes.get('/getAllUsers', [isAuthAdmin], getAllUsers);
 UserRoutes.get('/getById/:_id', [isAuthAdmin], getById);
 UserRoutes.patch('/changepassword', [isAuth], modifyPassword);
